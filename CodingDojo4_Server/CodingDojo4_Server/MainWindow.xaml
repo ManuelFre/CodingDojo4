@@ -1,0 +1,117 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CodingDojo4_Server"
+        xmlns:ViewModel="clr-namespace:CodingDojo4_Server.ViewModel" x:Class="CodingDojo4_Server.MainWindow"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <ViewModel:MainViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="right">
+            <Border CornerRadius="5,5,5,5"   BorderThickness="1" BorderBrush="CornflowerBlue" Background="Cornflowerblue" Margin="5">
+                <Button Content="Start" Background="Transparent" BorderBrush="Transparent"/>
+            </Border>
+            <Border CornerRadius="5,5,5,5"  BorderThickness="1" BorderBrush="CornflowerBlue" Background="Cornflowerblue" Margin="5">
+                <Button Content="Stop" Background="Transparent" BorderBrush="Transparent"/>
+            </Border>
+        </WrapPanel>
+        <TabControl Grid.Row="1">
+            <TabItem>
+                <TabItem.Header>
+                    <Label Content="Chat"/>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Text="Connected Users:" Margin="5" Grid.Row="0" Grid.Column="0"/>
+                    <Border Grid.Row ="1" Grid.Column="0" Margin="5" BorderBrush="Black" BorderThickness="1">
+                        <Grid Grid.Row="0" Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+                            <ListBox Grid.Row="0"/>
+                            <Border CornerRadius="5,5,5,5"  BorderThickness="1" BorderBrush="CornflowerBlue" Background="Cornflowerblue" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="right" Grid.Row="1">
+                                <Button Content="Drop" Background="Transparent" BorderBrush="Transparent"/>
+                            </Border>
+                        </Grid>
+                    </Border>
+
+                    <WrapPanel Grid.Row="0" Grid.Column="1">
+                        <TextBox Text="Received Messages:" Margin="5" />
+                        <TextBox Text="0" Margin="5" />
+                    </WrapPanel>
+                    <Grid Grid.Row="1" Grid.Column="1" Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="30"/>
+                        </Grid.RowDefinitions>
+                        <ListBox Grid.Row="0" BorderBrush="Black"/>
+                        <Border CornerRadius="5,5,5,5"  BorderThickness="1" BorderBrush="CornflowerBlue" Background="Cornflowerblue" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Grid.Row="1">
+                            <Button Content="Save to Log" Background="Transparent" BorderBrush="Transparent" />
+                        </Border>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem>
+                <TabItem.Header>
+                    <Label Content="Logs"/>
+                </TabItem.Header>
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <TextBox Text="Log Files:" Margin="5" Grid.Row="0" Grid.Column="0"/>
+                    <Border Grid.Row ="1" Grid.Column="0" Margin="5" BorderBrush="Black" BorderThickness="1">
+                        <Grid Grid.Row="0" Grid.Column="1">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="30"/>
+                            </Grid.RowDefinitions>
+                            <ListBox Grid.Row="0"/>
+                            <WrapPanel Grid.Row="1" HorizontalAlignment="Right">
+                                <Border CornerRadius="5,5,5,5"  BorderThickness="1" BorderBrush="CornflowerBlue" Background="Cornflowerblue" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="right" >
+                                    <Button Content="Show" Background="Transparent" BorderBrush="Transparent"/>
+                                </Border>
+                                <Border CornerRadius="5,5,5,5"  BorderThickness="1" BorderBrush="CornflowerBlue" Background="Cornflowerblue" Margin="5" VerticalAlignment="Bottom" HorizontalAlignment="right">
+                                    <Button Content="Drop" Background="Transparent" BorderBrush="Transparent"/>
+                                </Border>
+                            </WrapPanel>
+                        </Grid>
+                    </Border>
+
+                    <WrapPanel Grid.Row="0" Grid.Column="1">
+                        <TextBox Text="Received Messages:" Margin="5" />
+                        <TextBox Text="0" Margin="5" />
+                    </WrapPanel>
+                    <Grid Grid.Row="1" Grid.Column="1" Margin="5">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <ListBox Grid.Row="0" BorderBrush="Black"/>
+                    </Grid>
+                </Grid>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
+</Window>
